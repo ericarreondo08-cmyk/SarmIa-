@@ -21,8 +21,15 @@ def esPreguntaPermitida(pregunta, palabrasNoPermitidas):
     Se fija si la pregunta tiene alguna de esas palabras, sin importar mayúsculas ni tildes.
     Devuelve False si tiene alguna y True si no.
     Ejemplo: esPreguntaPermitida("Pasame el parcial resuelto", ["parcial resuelto"]) devuelve False."""
+    from ..utilidades import textos
+   
+    preguntaNormalizada = textos.normalizar(pregunta)
+    for palabraprohibida in palabrasNoPermitidas:
+      palabraNormalizada = textos.normalizar(palabraprohibida)
+      if textos.contiene(preguntaNormalizada, palabraNormalizada):
+       return False
+      
     return True
-
 
 def textoDelUsuario(contexto):
     mensaje = contexto.user_content
