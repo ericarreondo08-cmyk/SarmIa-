@@ -11,7 +11,7 @@ def valoresDistintos(horarios, posicion):
     resultado = [] #Aca se va a almacenar cada dato
 
     for i in horarios: #Recorremos la tabla horarios
-        dato = horarios[posicion] 
+        dato = i[posicion] 
         if not listas.esta(dato, resultado): #Si el dato que revisamos no esta en nuestra nueva lista lo agregamos
             resultado.append(dato)
 

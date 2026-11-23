@@ -13,7 +13,7 @@ def horariosEnAula(oferta, aula, dia):
     for horario in oferta: #Revisamos cada horario 
         au = horario[configuracion.POSICION_AULA] #Guardamos su aula
         d = horario[configuracion.POSICION_DIA] #Guardamos su dia
-        if textos.normalizar(au) == textos.normalizar(aula) and textos.normalizar(d) == textos.normalizar(dia): #Comparamos con lo ingresado
+        if textos.contiene(au, aula) and textos.normalizar(d) == textos.normalizar(dia): #Comparamos con lo ingresado
             horarios_aula.append(horario) #Si coinciden, se agrega al resultado
 
     return horarios_aula
